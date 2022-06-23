@@ -13,6 +13,9 @@ After the image is built run:
 Migrations have to be applied. To apply migrations, run:
 - docker-compose exec web python manage.py migrate
 
+To run the unit tests, execute the following command:
+- docker-compose exec web python manage.py test
+
 The following URLs are available:
 
 http://localhost:8000/api/employees - lists all employees stored in the database
