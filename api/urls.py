@@ -1,7 +1,7 @@
 from .views import *
 from rest_framework.routers import SimpleRouter
 
-router = SimpleRouter()
+router = SimpleRouter()  # instantiate a SimpleRouter
 
 router.register('employees', EmployeesViewSet, 'employees')
 

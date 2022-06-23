@@ -50,7 +50,10 @@ class EmployeesViewSet(
         mixins.ListModelMixin,
         viewsets.GenericViewSet
 ):
-
+    """
+    ViewSet for the Employees API.
+    Allowed methods: GET, PUT, DELETE.
+    """
     serializer_class = EmployeeItemSerializer
     pagination_class = CustomNumberPagination
 
@@ -68,7 +71,10 @@ class EmployeesViewSet(
 
 
 class AverageAgePerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    
+    """
+    ViewSet for the average age per industry.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('date_of_birth', 'industry')
     serializer_class = AgePerIndustrySerializer
 
@@ -79,7 +85,10 @@ class AverageAgePerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSe
 
 
 class HighestAgePerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    
+    """
+    ViewSet for the highest age per industry.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('date_of_birth', 'industry')
     serializer_class = AgePerIndustrySerializer
 
@@ -90,7 +99,10 @@ class HighestAgePerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSe
 
 
 class LowestAgePerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    
+    """
+    ViewSet for the lowest age per industry.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('date_of_birth', 'industry')
     serializer_class = AgePerIndustrySerializer
 
@@ -101,7 +113,10 @@ class LowestAgePerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet
 
 
 class AverageSalariesPerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    
+    """
+    ViewSet for the average salaries per industry.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('salary', 'industry')
     serializer_class = SalariesPerIndustrySerializer
     
@@ -112,7 +127,10 @@ class AverageSalariesPerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericV
 
 
 class HighestSalariesPerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    
+    """
+    ViewSet for the highest salaries per industry.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('salary', 'industry')
     serializer_class = SalariesPerIndustrySerializer
     
@@ -123,7 +141,10 @@ class HighestSalariesPerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericV
 
 
 class LowestSalariesPerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-    
+    """
+    ViewSet for the lowest salaries per industry.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('salary', 'industry')
     serializer_class = SalariesPerIndustrySerializer
     
@@ -134,7 +155,10 @@ class LowestSalariesPerIndustryViewSet(mixins.ListModelMixin, viewsets.GenericVi
 
 
 class AverageSalariesPerGenderViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-        
+    """
+    ViewSet for the average salaries per gender.
+    Allowed methods: GET.
+    """ 
     queryset = Employee.objects.all().values('salary', 'gender')
     serializer_class = SalariesPerGenderSerializer
 
@@ -145,6 +169,10 @@ class AverageSalariesPerGenderViewSet(mixins.ListModelMixin, viewsets.GenericVie
 
 
 class HighestSalariesPerGenderViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    ViewSet for the highest salaries per gender.
+    Allowed methods: GET.
+    """
     serializer_class = SalariesPerGenderSerializer
     queryset = Employee.objects.all().values('salary', 'gender')
 
@@ -155,6 +183,10 @@ class HighestSalariesPerGenderViewSet(mixins.ListModelMixin, viewsets.GenericVie
 
 
 class LowestSalariesPerGenderViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    """
+    ViewSet for the lowest salaries per gender.
+    Allowed methods: GET.
+    """
     serializer_class = SalariesPerGenderSerializer
     queryset = Employee.objects.all().values('salary', 'gender')
 
@@ -165,7 +197,10 @@ class LowestSalariesPerGenderViewSet(mixins.ListModelMixin, viewsets.GenericView
 
 
 class AverageSalariesPerExperienceViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-        
+    """
+    ViewSet for the average salaries per experience.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('salary', 'years_of_experience')
     serializer_class = SalariesPerExperienceSerializer
 
@@ -176,7 +211,10 @@ class AverageSalariesPerExperienceViewSet(mixins.ListModelMixin, viewsets.Generi
 
 
 class LowestSalariesPerExperienceViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-        
+    """
+    ViewSet for the lowest salaries per experience.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('salary', 'years_of_experience')
     serializer_class = SalariesPerExperienceSerializer
 
@@ -187,7 +225,10 @@ class LowestSalariesPerExperienceViewSet(mixins.ListModelMixin, viewsets.Generic
 
 
 class HighestSalariesPerExperienceViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
-        
+    """
+    ViewSet for the highest salaries per experience.
+    Allowed methods: GET.
+    """
     queryset = Employee.objects.all().values('salary', 'years_of_experience')
     serializer_class = SalariesPerExperienceSerializer
 

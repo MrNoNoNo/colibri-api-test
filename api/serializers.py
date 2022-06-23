@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Employee
 
+
 class EmployeeItemSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(max_length=50)
     last_name = serializers.CharField(max_length=50)
