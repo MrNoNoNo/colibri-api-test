@@ -1,0 +1,7 @@
+Django>4.0,<4.2
+psycopg2>=2.8
+djangorestframework>3.0
+django-filter
+pytz
+pandas
+pytest-django
